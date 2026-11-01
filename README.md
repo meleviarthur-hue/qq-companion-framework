@@ -17,7 +17,7 @@
 ## 一行安装（macOS / Linux）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/meleviarthur-hue/qq-companion-framework/main/get.sh | bash
+curl -fsSL https://raw.githubusercontent.com/meleviarthur-hue/qq-companion-framework/refs/heads/main/get.sh | bash
 ```
 
 装到 `~/qq-companion-framework`，启动后打开向导 http://127.0.0.1:8080/。

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 一行装好并启动：
-#   curl -fsSL https://raw.githubusercontent.com/meleviarthur-hue/qq-companion-framework/main/get.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/meleviarthur-hue/qq-companion-framework/refs/heads/main/get.sh | bash
 #
 # 可用环境变量覆盖：
 #   QQCF_REPO=meleviarthur-hue/qq-companion-framework   QQCF_BRANCH=main   QQCF_DIR=~/qq-companion-framework
