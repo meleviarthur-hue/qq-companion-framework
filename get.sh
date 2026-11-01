@@ -50,4 +50,12 @@ say ""
 say "装好了：$DEST"
 say "打开向导填 Key 和主人 QQ：http://127.0.0.1:8080/"
 say ""
+
+if command -v ss >/dev/null 2>&1 && ss -ltn 2>/dev/null | grep -qE ':8080[[:space:]]'; then
+  say "!! 8080 端口已经被占用——多半是之前装过一次还在跑。"
+  say "   要重启就先停掉旧的：pkill -f 'node src/index.js'"
+  say "   或者把 $DEST/.env 里的 PORT 改成别的（比如 8090）再启动。"
+  say ""
+fi
+
 exec node src/index.js
