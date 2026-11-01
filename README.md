@@ -23,16 +23,27 @@ curl -fsSL https://raw.githubusercontent.com/meleviarthur-hue/qq-companion-frame
 装到 `~/qq-companion-framework`，启动后打开向导 http://127.0.0.1:8080/。
 重复执行就是更新代码，**不会动 `.env` 和 `data/`**。
 
-Windows 用 PowerShell：
+### Windows
+
+最简单：仓库页 → Code → Download ZIP → 解压 → **双击 `start.bat`**。
+
+或者用命令行：
 
 ```powershell
 cd $HOME
 git clone https://github.com/meleviarthur-hue/qq-companion-framework
 cd qq-companion-framework
-powershell -ExecutionPolicy Bypass -File install.ps1
+.\start.bat
 ```
 
-不想装 git 就下 ZIP：仓库页 → Code → Download ZIP → 解压 → 双击/运行 `install.sh` 或 `install.ps1`。
+`start.bat` 会自动绕开 PowerShell 的执行策略限制，不用你手动改设置。
+只想单独跑脚本也可以：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1
+```
+
+需要 **Node.js 22+**，安装时记得勾选 `Add to PATH`。
 
 启动后打开向导：http://127.0.0.1:8080/
 状态页：http://127.0.0.1:8080/dashboard
