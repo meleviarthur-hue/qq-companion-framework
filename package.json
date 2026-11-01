@@ -1,0 +1,1 @@
+{"description":"QQ 个人专属陪伴机器人完整框架：小号 + NapCat + DeepSeek，v1 只做个人专属，不做群聊，零依赖","engines":{"node":">=22"},"main":"src/index.js","name":"qq-companion-framework","scripts":{"dry-run":"node scripts/dry-run.mjs","start":"node src/index.js"},"type":"module","version":"1.0.0"}

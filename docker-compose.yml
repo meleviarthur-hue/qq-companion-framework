@@ -1,0 +1,29 @@
+# 可选的 Docker 部署：NapCat + 本框架。
+# 注意：Docker 路径未用真实 QQ 测试过；NapCat 的 HTTP 调用端口请以 NapCat WebUI（6099）里
+# 的实际网络配置为准，如与下面不同，请相应修改 bot 的 ONEBOT_HTTP_URL。
+services:
+  napcat:
+    image: mlikiowa/napcat-docker:latest
+    container_name: qq-napcat
+    restart: always
+    ports:
+      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:6099:6099"
+    volumes:
+      - ./napcat-data:/app/.config/QQ
+      - ./napcat-cache:/app/napcat/cache
+  bot:
+    build: .
+    container_name: qq-companion-bot
+    restart: always
+    depends_on:
+      - napcat
+    ports:
+      - "127.0.0.1:8080:8080"
+    env_file:
+      - .env
+    environment:
+      ONEBOT_HTTP_URL: http://napcat:3000
+    volumes:
+      - ./data:/app/data
+      - ./stickers:/app/stickers

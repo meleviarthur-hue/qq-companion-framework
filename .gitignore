@@ -1,0 +1,8 @@
+.env
+data/
+node_modules/
+bot.log
+*.log
+napcat-data/
+napcat-cache/
+.DS_Store
